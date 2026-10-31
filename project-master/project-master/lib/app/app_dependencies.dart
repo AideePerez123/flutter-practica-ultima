@@ -35,7 +35,6 @@ class AppDependencies {
   late final DashboardProvider dashboardProvider =
       DashboardProvider(productRepository, movementRepository)..load();
 
-  /// Seeds demonstration data if the database is empty.
   Future<void> bootstrap() async {
     await DemoDataSeeder(database).seedIfEmpty();
   }
