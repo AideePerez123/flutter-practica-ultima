@@ -1,13 +1,10 @@
 # Inventario Inteligente
 
-Aplicación móvil Flutter para gestionar el inventario de un pequeño comercio o
-bodega: consulta de existencias, registro de entradas y salidas, generación y
+Aplicación móvil Flutter para manejar el inventario de un pequeño comercio consulta de existencias, registro de entradas y salidas, generación y
 lectura de códigos de barras y QR, e historial de movimientos.
 
-**Curso:** Programación de Dispositivos Móviles II — UMES
-**Periodo:** Segundo semestre 2026 — Proyecto de cierre 1
 
-## Funcionalidades
+Funcionalidades
 
 - **Productos:** alta, edición, baja lógica (desactivar) y reactivación. Cada
   producto tiene código único, categoría, precios de compra y venta, stock
@@ -27,7 +24,7 @@ lectura de códigos de barras y QR, e historial de movimientos.
 
 ## Arquitectura
 
-Se separa el dominio (reglas de negocio), los datos (SQLite) y la presentación,
+Se separa el dominio reglas de negocio, los datos de SQLite y la presentación,
 por funcionalidad:
 
 ```
@@ -60,34 +57,7 @@ Reglas clave del dominio:
 - Al primer arranque se cargan datos de demostración: 3 categorías y 15
   productos con su entrada inicial.
 
-## Requisitos
 
-- Flutter 3.47 o superior
-- Android SDK (compilación y ejecución en Android)
-- Java 21
 
-## Ejecución
 
-```bash
-flutter pub get
-flutter run
-```
 
-## Pruebas
-
-```bash
-flutter analyze
-flutter test
-```
-
-Las pruebas cubren las reglas de inventario (entradas, salidas, ajustes y
-validaciones) y los repositorios sobre una base de datos en memoria, incluida
-la atomicidad del stock y la conservación del historial al desactivar.
-
-## Compilación
-
-```bash
-flutter build apk --debug
-```
-
-El APK se genera en `build/app/outputs/flutter-apk/`.
